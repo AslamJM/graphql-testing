@@ -12,6 +12,7 @@ import { DocumentNode } from "graphql";
 async function startApolloServer(typeDefs: DocumentNode, resolvers: any) {
   // Required logic for integrating with Express
   const app = express();
+  app.get("/", (_, res) => res.send("GRAPHQL"));
   // Our httpServer handles incoming requests to our Express app.
   // Below, we tell Apollo Server to "drain" this httpServer,
   // enabling our servers to shut down gracefully.
